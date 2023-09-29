@@ -76,24 +76,24 @@ $ npm start:dev
 
 This software uses the following open source packages:
 
-- [HTML5](https://web.dev/learn/html/)
-- [CSS3](https://web.dev/learn/css/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [React](https://es.react.dev/)
-- [Node.js](https://nodejs.org/es)
-- [Nest.js](https://nestjs.com/)
-- [PostgreSQL](https://www.postgresql.org/)
-- [Docker](https://www.docker.com/)
-
+- ![HTML5](https://img.shields.io/badge/HTML5-E34F26.svg?style=for-the-badge&logo=HTML5&logoColor=white)
+- ![CSS3](https://img.shields.io/badge/CSS3-1572B6.svg?style=for-the-badge&logo=CSS3&logoColor=white)
+- ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4.svg?style=for-the-badge&logo=Tailwind-CSS&logoColor=white)
+- ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white)
+- ![React](https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black)
+- ![NodeJS](https://img.shields.io/badge/Node.js-339933.svg?style=for-the-badge&logo=nodedotjs&logoColor=white)
+- ![NestJS](https://img.shields.io/badge/NestJS-E0234E?logo=nestjs&logoColor=fff&style=for-the-badge)
+- ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1.svg?style=for-the-badge&logo=PostgreSQL&logoColor=white)
+- ![Docker](https://img.shields.io/badge/Docker-2496ED.svg?style=for-the-badge&logo=Docker&logoColor=white)
+  
 ## Developers
 
 The development team behind the platform
 
 <table align="center">
   <tr>
-    <td align="center"><a href="https://leaburgos.netlify.app/"><img src="https://avatars0.githubusercontent.com/u/5266810?v=3" width="100px;" alt="Leandro Burgos"/><br /><sub><b>Leandro Burgos</b></sub></a><br /><p title="Code">💻</p></td>
-    <td align="center"><a href="#"><img src="https://avatars0.githubusercontent.com/u/5266810?v=3" width="100px;" alt="Ignacio Godoy"/><br /><sub><b>Ignacio Godoy</b></sub></a><br /><p title="Code">💻</p></td>
+    <td align="center"><a href="https://leaburgos.netlify.app/"><img src="https://i.imgur.com/NhfTbTW.jpeg" width="100px;" alt="Leandro Burgos"/><br /><sub><b>Leandro Burgos</b></sub></a><br /><p title="Code">💻</p></td>
+    <td align="center"><a href="#"><img src="https://i.imgur.com/3s5t5UC.png" width="75px;" alt="Ignacio Godoy"/><br /><sub><b>Ignacio Godoy</b></sub></a><br /><p title="Code">💻</p></td>
   </tr>
 </table>
 
