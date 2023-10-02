@@ -28,7 +28,7 @@ The web application complies with the following functionalities.
 
 - Product management.
 
-- User Management.
+- User management.
 
 - Role management.
 
@@ -37,6 +37,10 @@ The web application complies with the following functionalities.
 - Viewing product catalogs.
 
 - Buy from the application itself digitally and transactionally.
+  
+- APIS Integration
+
+- Integration with a mobile application
 
 ## How To Use
 
@@ -98,6 +102,8 @@ The development team behind the platform
 </table>
 
 ## Gratitude
+
+I want to start by thanking my teachers who have accompanied me in these 4 years during my professional training and acquired the skills, knowledge and tools for the work and professional world.
 
 ## License
 
