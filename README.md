@@ -44,7 +44,8 @@ The web application complies with the following functionalities.
 
 ## How To Use
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. 
+Or, You can use variants of npm, such as [yarn](https://yarnpkg.com/) and [pnpm](https://pnpm.io/es/), this project has been created using the pnpm package manager. Any of these options are valid to install node_modules dependencies From your command line:
 
 **Frontend**
 ```
