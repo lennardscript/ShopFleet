@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-  <img src="https://i.imgur.com/vwa6Ktp.png" alt="ShopFleet" width="350" />
+  <img src="https://i.imgur.com/B07LTHw.png" alt="ShopFleet" width="350" />
   <br>
   ShopFleet
   <br>
