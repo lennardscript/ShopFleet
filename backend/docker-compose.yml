@@ -2,12 +2,12 @@ version: "3.1"
 services:
   postgres:
     image: postgres:latest
-    container_name: postgres_db
+    container_name: ${CONTAINER_NAME}
     restart: always
     environment:
-      POSTGRES_DB: shopfleet_db
-      POSTGRES_USER: shopfleet_user
-      POSTGRES_PASSWORD: root
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
     ports:
