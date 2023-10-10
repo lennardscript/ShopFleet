@@ -9,7 +9,7 @@
 
 <table align="center">
   <tr>
-    <td>A web platform where you can buy a variety of products</td>
+    <td>A web platform where you can buy a variety of technological products</td>
   </tr>
 </table>
 
