@@ -15,7 +15,6 @@
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
-  <a href="#how-to-use">How To Use</a> •
   <a href="#technologies">Technologies</a> •
   <a href="#developers">Developers</a> •
   <a href="#gratitude">Gratitude</a> •
@@ -41,79 +40,6 @@ The web application complies with the following functionalities.
 - APIS Integration
 
 - Integration with a mobile application
-
-## How To Use
-
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. 
-Or, You can use variants of npm, such as [yarn](https://yarnpkg.com/) and [pnpm](https://pnpm.io/es/), this project has been created using the pnpm package manager. Any of these options are valid to install node_modules dependencies From your command line:
-
-**Frontend**
-```
-# Clone this repository
-$ git clone https://github.com/lennardscript/ShopFleet
-
-# Go into the repository
-$ cd ShopFleet && cd client
-
-# Install dependencies
-$ npm install
-
-# Run the app
-$ npm start
-```
-
-**Backend**
-```
-# Clone this repository
-$ git clone https://github.com/lennardscript/ShopFleet
-
-# Go into the repository
-$ cd ShopFleet && cd backend
-
-# Install dependencies
-$ npm install
-
-# Run the app
-$ npm start:dev
-```
-
-Both the frontend and the backend have a docker compose file to simplify the orchestration of services. You must have [Docker](https://www.docker.com/) installed on your computer. To build the project with docker, you must enter the following command line:
-
-**Frontend**
-```
-# Go to cloned directory
-$ cd ShopFleet && cd client
-
-# Run the services
-$ docker-compose up
-
-# Or run services in the background
-$ docker-compose up -d
-
-# View logs after running services
-$ docker-compose logs
-
-# Stop and delete containers created by docker compose (You can put the following parameter to delete the volumes created by docker '--volumes')
-$ docker-compose down
-```
-
-**Backend**
-```
-# Go to cloned directory
-$ cd ShopFleet && cd backend
-
-# Run the services
-$ docker-compose up
-
-# Or run services in the background
-$ docker-compose up -d
-
-# View logs after running services
-$ docker-compose logs
-
-# Stop and delete containers created by docker compose (You can put the following parameter to delete the volumes created by docker '--volumes')
-$ docker-compose down
-```
 
 ## Technologies
 
