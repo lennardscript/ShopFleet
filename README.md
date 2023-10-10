@@ -77,6 +77,44 @@ $ npm install
 $ npm start:dev
 ```
 
+Both the frontend and the backend have a docker compose file to simplify the orchestration of services. You must have [Docker](https://www.docker.com/) installed on your computer. To build the project with docker, you must enter the following command line:
+
+**Frontend**
+```
+# Go to cloned directory
+$ cd ShopFleet && cd client
+
+# Run the services
+$ docker-compose up
+
+# Or run services in the background
+$ docker-compose up -d
+
+# View logs after running services
+$ docker-compose logs
+
+# Stop and delete containers created by docker compose (You can put the following parameter to delete the volumes created by docker '--volumes')
+$ docker-compose down
+```
+
+**Backend**
+```
+# Go to cloned directory
+$ cd ShopFleet && cd backend
+
+# Run the services
+$ docker-compose up
+
+# Or run services in the background
+$ docker-compose up -d
+
+# View logs after running services
+$ docker-compose logs
+
+# Stop and delete containers created by docker compose (You can put the following parameter to delete the volumes created by docker '--volumes')
+$ docker-compose down
+```
+
 ## Technologies
 
 This software uses the following open source packages:
