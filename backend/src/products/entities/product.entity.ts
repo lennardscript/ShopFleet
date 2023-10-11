@@ -1,23 +1,21 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-
 @Entity()
 export class Product {
 
   @PrimaryGeneratedColumn()
   id_product: number;
 
-  @Column()
+  @Column({ type: 'varchar', length: 255, nullable: false })
   name_product: string;
 
-  @Column()
+  @Column({ type: 'text', nullable: true })
   description_product: string;
 
-  @Column()
+  @Column({ type: 'int', nullable: false })
   price_product: number;
 
-  @Column('bytea')
+  @Column({type: 'bytea', nullable: true })
   image_product: Blob;
-
 
 }
