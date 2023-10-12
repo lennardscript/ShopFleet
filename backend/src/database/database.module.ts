@@ -11,8 +11,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       useFactory: async (configService: ConfigService) => ({
         type: 'postgres',
         url: configService.get('DATABASE_URL'),
+        //url: configService.get('DATABASE_URL_2'), //! Por emergencias si se cae la base de datos
         synchronize: true,
-        autoLoadEntities: true
+        autoLoadEntities: true,
+        ssl: true
       }),
     }),
   ],
