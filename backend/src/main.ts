@@ -22,8 +22,8 @@ async function bootstrap() {
     .setDescription('The APIS description')
     .setVersion('1.0')
     .build();
-  const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('docs', app, document);
+    const document = SwaggerModule.createDocument(app, config);
+    SwaggerModule.setup('/', app, document);
 
   await app.listen(parseInt(process.env.PORT) || 8080);
 }

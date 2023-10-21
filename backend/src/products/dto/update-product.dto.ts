@@ -1,4 +1,19 @@
-import { PartialType } from '@nestjs/swagger';
-import { CreateProductDto } from './create-product.dto';
+import { IsBase64, IsInt, IsOptional, IsPositive, IsString } from "class-validator";
+export class UpdateProductDto {
+  @IsString()
+  @IsOptional()
+  name_product?: string;
 
-export class UpdateProductDto extends PartialType(CreateProductDto) {}
+  @IsString()
+  @IsOptional()
+  description_product?: string;
+
+  @IsInt()
+  @IsPositive()
+  @IsOptional()
+  price_product?: number;
+
+  @IsBase64()
+  @IsOptional()
+  image_product?: Blob;
+}

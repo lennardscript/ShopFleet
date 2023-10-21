@@ -11,9 +11,22 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       useFactory: async (configService: ConfigService) => ({
         type: 'postgres',
         url: configService.get('DATABASE_URL'),
-        //url: configService.get('DATABASE_URL_2'), //! Por emergencias si se cae la base de datos
+
+        // url: configService.get('DATABASE_URL_2'), //! Por emergencias si se cae la base de datos
+
+        /* //! Levantarlo con Docker (docker-compose up -d)
+        host: 'localhost',
+        port: 5432,
+        username: '${POSTGRES_USER}',
+        password: '${POSTGRES_PASSWORD}',
+        database: '${POSTGRES_DB}',
+        */
+
         synchronize: true,
         autoLoadEntities: true,
+        logging: true,
+        dropSchema: true,
+        migrationsRun: true,
         ssl: true
       }),
     }),
