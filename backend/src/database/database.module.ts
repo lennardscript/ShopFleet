@@ -21,9 +21,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         password: '${POSTGRES_PASSWORD}',
         database: '${POSTGRES_DB}',
         */
-
         synchronize: true,
         autoLoadEntities: true,
+        entities: ["dist/**/*.entity{.ts,.js}"],
         logging: true,
         dropSchema: true,
         migrationsRun: true,

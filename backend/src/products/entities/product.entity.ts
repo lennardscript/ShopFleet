@@ -1,8 +1,15 @@
-import { Column, CreateDateColumn, DeleteDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Column,
+  CreateDateColumn,
+  DeleteDateColumn,
+  Entity,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { Category } from 'src/categories/entities/category.entity';
 
-@Entity()
+@Entity('products')
 export class Product {
-
   @PrimaryGeneratedColumn()
   id_product: number;
 
@@ -12,13 +19,15 @@ export class Product {
   @Column({ type: 'text', nullable: true })
   description_product: string;
 
-  @Column({ type: 'text', nullable: true })
-  category: string;
+  @ManyToOne(() => Category, category => category.id_category, {
+    eager: true,
+  })
+  category: Category;
 
   @Column({ type: 'int', nullable: false })
   price_product: number;
 
-  @Column({type: 'bytea', nullable: true })
+  @Column({ type: 'bytea', nullable: true })
   image_product: Blob;
 
   @CreateDateColumn()
@@ -26,5 +35,4 @@ export class Product {
 
   @DeleteDateColumn()
   deleted_at: Date;
-
 }

@@ -13,7 +13,8 @@ export class ProductsService {
   ) {}
 
   async create(createProductDto: CreateProductDto) {
-    return await this.productRepository.save(createProductDto);
+    const product = this.productRepository.create(createProductDto)
+    return await this.productRepository.save(product);
   }
 
   async findAll() {
