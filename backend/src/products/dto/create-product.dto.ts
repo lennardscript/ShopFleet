@@ -19,6 +19,11 @@ export class CreateProductDto {
   @IsPositive()
   price_product: number;
 
+  @IsNotEmpty()
+  @IsInt()
+  @IsPositive()
+  quantity: number;
+
   @IsBase64()
   @IsOptional()
   image_product?: Blob;

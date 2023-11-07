@@ -27,6 +27,9 @@ export class Product {
   @Column({ type: 'int', nullable: false })
   price_product: number;
 
+  @Column({ type: 'int', nullable: false })
+  quantity_product: number;
+
   @Column({ type: 'bytea', nullable: true })
   image_product: Blob;
 

@@ -16,6 +16,10 @@ export class UpdateProductDto {
   @IsPositive()
   @IsOptional()
   price_product?: number;
+  
+  @IsInt()
+  @IsPositive()
+  quantity?: number;
 
   @IsBase64()
   @IsOptional()
