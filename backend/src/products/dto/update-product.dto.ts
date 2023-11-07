@@ -8,6 +8,10 @@ export class UpdateProductDto {
   @IsOptional()
   description_product?: string;
 
+  @IsString()
+  @IsOptional()
+  category?: string;
+
   @IsInt()
   @IsPositive()
   @IsOptional()

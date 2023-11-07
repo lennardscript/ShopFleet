@@ -10,6 +10,10 @@ export class CreateProductDto {
   @IsOptional()
   description_product?: string;
 
+  @IsString()
+  @IsOptional()
+  category?: string;
+
   @IsNotEmpty()
   @IsInt()
   @IsPositive()
