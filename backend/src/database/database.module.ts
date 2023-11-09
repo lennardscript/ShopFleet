@@ -25,7 +25,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         autoLoadEntities: true,
         entities: ["dist/**/*.entity{.ts,.js}"],
         logging: true,
-        dropSchema: true,
+        // dropSchema: true,
         migrationsRun: true,
         ssl: true
       }),
