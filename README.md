@@ -72,5 +72,5 @@ I want to start by thanking my teachers who have accompanied me in these 4 years
 
 ## License
 
-MIT
+Mozilla Public License 2.0
 
