@@ -16,8 +16,9 @@ export class AuthGuard implements CanActivate {
     const request = context.switchToHttp().getRequest();
 
     const token = this.extractTokenFromHeader(request);
+    const refreshToken = this.extractRefreshToken(request);
 
-    if (!token) {
+    if (!token || !refreshToken) {
       throw new UnauthorizedException();
     }
 
@@ -31,11 +32,31 @@ export class AuthGuard implements CanActivate {
       throw new UnauthorizedException();
     }
 
+    //* Validar el refresh token
+
+    try {
+      const refreshPayload = await this.jwtService.verifyAsync(refreshToken, {
+        secret: jwtConstants.secret,
+      });
+
+      //* Si el token de actualización es válido, genere un nuevo token de acceso
+      const newToken = await this.jwtService.signAsync(refreshPayload);
+
+      //* Agregar un nuevo token de acceso a la respuesta
+      request['new_token'] = newToken;
+    } catch {
+      throw new UnauthorizedException();
+    }
+
     return true;
   }
 
   private extractTokenFromHeader(request: Request): string | undefined {
     const [type, token] = request.headers.authorization?.split(' ') ?? [];
     return type === 'Bearer' ? token : undefined;
+  }
+
+  private extractRefreshToken(request: Request): string | undefined {
+    return request.cookies['refresh-token'];
   }
 }

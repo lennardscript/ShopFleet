@@ -1,12 +1,9 @@
-import { Body, Controller, Get, Post, Req, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Post, Req, UnauthorizedException} from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { SignUpDto } from './dto/signup.dto';
 import { SignInDto } from './dto/signin.dto';
-import { AuthGuard } from './guard/auth.guard';
 import { Request } from 'express';
-import { RolesGuard } from './guard/roles.guard';
 import { Role } from './enums/rol.enum';
-import { Roles } from './decorators/roles.decorator';
 import { Auth } from './decorators/auth.decorator';
 
 interface RequestWithUser extends Request {
@@ -35,6 +32,19 @@ export class AuthController {
     signinDto: SignInDto,
   ) {
     return await this.authService.signin(signinDto);
+  }
+
+  @Post('refresh')
+  async refresh(@Req() request: Request) {
+    const newToken = request['new_token'];
+
+    if (!newToken) {
+      throw new UnauthorizedException();
+    }
+
+    return {
+      accesToken: newToken,
+    };
   }
 
   //* Sin unir decoradores

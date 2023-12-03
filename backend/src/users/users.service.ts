@@ -7,7 +7,6 @@ import { Repository } from 'typeorm';
 
 @Injectable()
 export class UsersService {
-
   constructor(
     @InjectRepository(User)
     private readonly userRepository: Repository<User>,
@@ -40,8 +39,18 @@ export class UsersService {
     return this.userRepository.save(user);
   }
 
-  async remove(id: number) {
+  async updateRefreshToken(id: number, refreshToken: string) {
+    const user = await this.userRepository.findOneBy({ id_user: id });
 
+    if (!user) {
+      throw new NotFoundException('User not found');
+    }
+
+    user.refreshToken = refreshToken;
+    return this.userRepository.save(user);
+  }
+
+  async remove(id: number) {
     const user = await this.userRepository.findOneBy({ id_user: id });
 
     if (!user) {
@@ -49,6 +58,5 @@ export class UsersService {
     }
 
     await this.userRepository.remove(user);
-
   }
 }
