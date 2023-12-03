@@ -1,3 +1,4 @@
+import { Exclude } from 'class-transformer';
 import {
   Column,
   CreateDateColumn,
@@ -8,7 +9,7 @@ import {
 
 @Entity('users')
 export class User {
-  @PrimaryGeneratedColumn("uuid")
+  @PrimaryGeneratedColumn('uuid')
   id_user: number;
 
   @Column({ type: 'varchar', length: 255, nullable: false })
@@ -17,6 +18,7 @@ export class User {
   @Column({ type: 'varchar', length: 255, nullable: false, unique: true })
   email: string;
 
+  @Exclude()
   @Column({ type: 'varchar', length: 255, nullable: false })
   password: string;
 
