@@ -9,6 +9,7 @@ import { SignUpDto } from './dto/signup.dto';
 import * as bcrypt from 'bcryptjs';
 import { SignInDto } from './dto/signin.dto';
 import { JwtService } from '@nestjs/jwt';
+import { Role } from './enums/rol.enum';
 
 @Injectable()
 export class AuthService {
@@ -63,12 +64,9 @@ export class AuthService {
   }
 
   async profile({ email, role }: { email: string; role: string }) {
-    /* if(role !== 'admin') {
+    if(role !== Role.ADMIN && role !== 'otherAllowedRole') {
       throw new UnauthorizedException('You are not authorized to acces this resource');
-    } */
-
-    
-
+    }
     return await this.usersService.findOneByEmail(email);
   }
 }
