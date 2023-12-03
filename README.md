@@ -39,7 +39,7 @@ The web application complies with the following functionalities.
   
 - APIS Integration
 
-- Integration with a mobile application
+- Integration with a [mobile application](https://github.com/lennardscript/ShopFleet-App)
 
 ## Technologies
 
@@ -72,5 +72,5 @@ I want to start by thanking my teachers who have accompanied me in these 4 years
 
 ## License
 
-MIT
+Mozilla Public License 2.0
 
