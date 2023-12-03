@@ -1,6 +1,7 @@
 import {
   BadRequestException,
   Injectable,
+  InternalServerErrorException,
   NotFoundException,
   UnauthorizedException,
 } from '@nestjs/common';
@@ -20,17 +21,25 @@ export class AuthService {
   ) {}
 
   async signup({ username, email, password }: SignUpDto) {
+    const SALT_ROUNDS = 10;
     const user = await this.usersService.findOneByEmail(email);
 
     if (user) {
       throw new BadRequestException('User already exists');
     }
 
-    await this.usersService.create({
-      username,
-      email,
-      password: await bcrypt.hash(password, 10),
-    });
+    try {
+
+      const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS);
+
+      await this.usersService.create({
+        username,
+        email,
+        password: hashedPassword,
+      });
+    } catch (error) {
+      throw new InternalServerErrorException('An error ocurred while creating the user');
+    }
 
     return {
       username,
