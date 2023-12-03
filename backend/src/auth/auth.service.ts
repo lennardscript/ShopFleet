@@ -1,6 +1,7 @@
 import {
   BadRequestException,
   Injectable,
+  NotFoundException,
   UnauthorizedException,
 } from '@nestjs/common';
 import { UsersService } from 'src/users/users.service';
@@ -67,6 +68,12 @@ export class AuthService {
     if(role !== Role.ADMIN && role !== 'otherAllowedRole') {
       throw new UnauthorizedException('You are not authorized to acces this resource');
     }
-    return await this.usersService.findOneByEmail(email);
+
+    const user = await this.usersService.findOneByEmail(email);
+
+    if (!user) {
+      throw new NotFoundException('No user not found with email');
+    }
+    return user
   }
 }
