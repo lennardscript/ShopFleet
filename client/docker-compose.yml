@@ -1,0 +1,20 @@
+version: '3.1'
+services:
+  frontend:
+    image: ${FRONTEND_IMAGE}
+    build:
+      context: ./client
+      volumes:
+        - ./source-code:/app
+        - logs:var/log/frontend
+    environment: 
+      NODE_ENV: development
+    ports:
+        - "${FRONTEND_PORT}:5173"
+    stdin_open: false
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:${FRONTEND_PORT}:5173"]
+      interval: 5s
+      timeout: 3s
+      retries: 3

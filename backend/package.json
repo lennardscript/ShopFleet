@@ -1,10 +1,10 @@
 {
   "name": "backend",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "ShopFleet is a web platform where you can buy a variety of technological products completely online and from the comfort of your home.",
+  "author": "Leandro Burgos, Ignacio Godoy",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "SSPL",
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",

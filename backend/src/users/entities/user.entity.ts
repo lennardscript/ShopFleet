@@ -8,7 +8,7 @@ import {
 
 @Entity('users')
 export class User {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn("uuid")
   id_user: number;
 
   @Column({ type: 'varchar', length: 255, nullable: false })
@@ -21,7 +21,7 @@ export class User {
   password: string;
 
   @Column({ default: 'user' })
-  rol: string;
+  role: string;
 
   @CreateDateColumn()
   created_at: Date;

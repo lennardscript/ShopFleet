@@ -3,7 +3,7 @@ import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('categories')
 export class Category {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn("uuid")
   id_category: number;
 
   @Column({ type: 'varchar', nullable: true })

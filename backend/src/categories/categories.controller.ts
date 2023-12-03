@@ -3,8 +3,10 @@ import { CategoriesService } from './categories.service';
 import { CreateCategoryDto } from './dto/create-category.dto';
 import { UpdateCategoryDto } from './dto/update-category.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { Role } from 'src/auth/enums/rol.enum';
 
 @ApiTags('categories')
+//@Auth(Role.ADMIN)
 @Controller('categories')
 export class CategoriesController {
   constructor(private readonly categoriesService: CategoriesService) {}
@@ -34,3 +36,4 @@ export class CategoriesController {
     return this.categoriesService.remove(id);
   }
 }
+
