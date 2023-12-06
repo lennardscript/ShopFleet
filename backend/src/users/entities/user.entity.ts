@@ -20,7 +20,10 @@ export class User {
   @Column({ type: 'varchar', length: 255, nullable: false, select: false })
   password: string;
 
-  @Column({ type: 'varchar', length: 255, nullable: true })
+  @Column({ type: 'uuid', unique: true })
+  reset_password: string;
+
+  @Column({ type: 'uuid', length: 255, unique: true, nullable: true })
   refreshToken: string;
 
   @Column({ default: 'user' })

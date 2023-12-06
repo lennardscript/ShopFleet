@@ -1,10 +1,11 @@
-import { Body, Controller, Get, Post, Req, UnauthorizedException} from '@nestjs/common';
+import { Body, Controller, Get, Patch, Post, Req, UnauthorizedException} from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { SignUpDto } from './dto/signup.dto';
 import { SignInDto } from './dto/signin.dto';
 import { Request } from 'express';
 import { Role } from './enums/rol.enum';
 import { Auth } from './decorators/auth.decorator';
+import { RequestPasswordResetDto } from './dto/request-reset-password.dto';
 
 interface RequestWithUser extends Request {
   user: {
@@ -45,6 +46,11 @@ export class AuthController {
     return {
       accesToken: newToken,
     };
+  }
+
+  @Patch('reset-password')
+  async resetPassword(@Body() requestPasswordResetDto: RequestPasswordResetDto) {
+    return await this.authService.resetPassword(requestPasswordResetDto);
   }
 
   //* Sin unir decoradores

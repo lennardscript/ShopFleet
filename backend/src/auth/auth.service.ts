@@ -12,6 +12,7 @@ import * as bcrypt from 'bcryptjs';
 import { SignInDto } from './dto/signin.dto';
 import { JwtService } from '@nestjs/jwt';
 import { Role } from './enums/rol.enum';
+import { RequestPasswordResetDto } from './dto/request-reset-password.dto';
 
 @Injectable()
 export class AuthService {
@@ -77,6 +78,21 @@ export class AuthService {
       refreshToken,
       email,
     };
+  }
+
+  async resetPassword(requestPasswordResetDto: RequestPasswordResetDto) {
+    const user = await this.usersService.findOneByEmail(requestPasswordResetDto.email);
+
+    if (!user) {
+      throw new NotFoundException('User not found');
+    }
+
+    const isValid = this.jwtService.verify(requestPasswordResetDto.email);
+
+    if (!isValid) {
+      throw new UnauthorizedException('Invalid token or expired password reset token');
+    }
+
   }
 
   async profile({ email, role }: { email: string; role: string }) {
