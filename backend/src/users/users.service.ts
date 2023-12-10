@@ -20,6 +20,13 @@ export class UsersService {
     return await this.userRepository.findOneBy({ email });
   }
 
+  async findByEmailWithPassword(email: string) {
+    return await this.userRepository.findOne({ 
+      where: { email },
+      select: ['id_user', 'username', 'email', 'password', 'role'],
+    });
+  }
+
   async findAll() {
     return await this.userRepository.find();
   }
@@ -39,7 +46,7 @@ export class UsersService {
     return this.userRepository.save(user);
   }
 
-  async updateRefreshToken(id: number, refreshToken: string) {
+  /* async updateRefreshToken(id: number, refreshToken: string) {
     const user = await this.userRepository.findOneBy({ id_user: id });
 
     if (!user) {
@@ -48,7 +55,7 @@ export class UsersService {
 
     user.refreshToken = refreshToken;
     return this.userRepository.save(user);
-  }
+  } */
 
   async remove(id: number) {
     const user = await this.userRepository.findOneBy({ id_user: id });

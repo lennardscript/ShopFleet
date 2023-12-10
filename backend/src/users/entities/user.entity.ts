@@ -1,3 +1,4 @@
+import { Role } from 'src/common/enums/rol.enum';
 import {
   Column,
   CreateDateColumn,
@@ -20,14 +21,14 @@ export class User {
   @Column({ type: 'varchar', length: 255, nullable: false, select: false })
   password: string;
 
-  @Column({ type: 'uuid', unique: true })
+  @Column({ type: 'uuid', unique: true, nullable: true })
   reset_password: string;
 
-  @Column({ type: 'uuid', length: 255, unique: true, nullable: true })
-  refreshToken: string;
+/*   @Column({ type: 'uuid', unique: true, nullable: true })
+  refreshToken: string; */
 
-  @Column({ default: 'user' })
-  role: string;
+  @Column({ type: 'enum', default: Role.CUSTOMER, enum: Role })
+  role: Role;
 
   @CreateDateColumn()
   created_at: Date;

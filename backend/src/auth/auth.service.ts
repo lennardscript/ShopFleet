@@ -11,7 +11,7 @@ import { SignUpDto } from './dto/signup.dto';
 import * as bcrypt from 'bcryptjs';
 import { SignInDto } from './dto/signin.dto';
 import { JwtService } from '@nestjs/jwt';
-import { Role } from './enums/rol.enum';
+import { Role } from '../common/enums/rol.enum';
 import { RequestPasswordResetDto } from './dto/request-reset-password.dto';
 
 @Injectable()
@@ -49,7 +49,7 @@ export class AuthService {
   }
 
   async signin({ email, password }: SignInDto) {
-    const user = await this.usersService.findOneByEmail(email);
+    const user = await this.usersService.findByEmailWithPassword(email);
 
     if (!user) {
       throw new UnauthorizedException('email is wrong');
@@ -71,7 +71,7 @@ export class AuthService {
       expiresIn: '7d',
     })
 
-    await this.usersService.updateRefreshToken(user.id_user, refreshToken);
+    //await this.usersService.updateRefreshToken(user.id_user, refreshToken);
 
     return {
       token,
