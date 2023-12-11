@@ -8,7 +8,7 @@ import { Role } from 'src/common/enums/rol.enum';
 
 @Auth(Role.ADMIN)
 @ApiTags('products')
-@Controller('products')
+@Controller('products') //TODO: 'http://localhost:8080/products'
 export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
 

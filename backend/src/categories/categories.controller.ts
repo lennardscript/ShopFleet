@@ -8,7 +8,7 @@ import { Role } from 'src/common/enums/rol.enum';
 
 @Auth(Role.ADMIN)
 @ApiTags('categories')
-@Controller('categories')
+@Controller('categories') //TODO: 'http://localhost:8080/categories'
 export class CategoriesController {
   constructor(private readonly categoriesService: CategoriesService) {}
 
